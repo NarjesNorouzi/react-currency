@@ -2,7 +2,7 @@ import React from "react";
 import {
   Title,
   Container,
-  Item as ItemElement,
+  Item,
   ItemTitle,
   ItemDetails,
   ItemDetailsLine,
@@ -10,10 +10,23 @@ import {
   ItemDetailsValue,
   ItemDetailsUpdatedAt,
 } from "./SectionElements";
-
-function Item({ dt }) {
+function getDtColor(dt) {
+  if (dt === "high") return "green";
+  else if (dt === "low") return "red";
+  else return;
+}
+function Section({ title, children }) {
   return (
-    <ItemElement dt={dt}>
+    <section>
+      {title && <Title>{title}:</Title>}
+      <Container>{children}</Container>
+    </section>
+  );
+}
+
+Section.Item = ({ dt }) => {
+  return (
+    <Item dt={getDtColor(dt)}>
       <ItemTitle>Test</ItemTitle>
       <ItemDetails>
         <ItemDetailsLine>
@@ -26,30 +39,8 @@ function Item({ dt }) {
         </ItemDetailsLine>
         <ItemDetailsUpdatedAt>22/10/21</ItemDetailsUpdatedAt>
       </ItemDetails>
-    </ItemElement>
+    </Item>
   );
-}
-
-function Section({ title }) {
-  return (
-    <section>
-      {title && <Title>{title}:</Title>}
-      <Container>
-        <Item dt="green" />
-        <Item dt="red" />
-        <Item dt="green" />
-        <Item dt="" />
-        <Item dt="red" />
-        <Item dt="" />
-        <Item dt="green" />
-        <Item dt="red" />
-        <Item dt="" />
-        <Item dt="" />
-        <Item dt="red" />
-        <Item dt="green" />
-      </Container>
-    </section>
-  );
-}
+};
 
 export default Section;
