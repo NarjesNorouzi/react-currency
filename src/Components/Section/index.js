@@ -24,20 +24,20 @@ function Section({ title, children }) {
   );
 }
 
-Section.Item = ({ dt }) => {
+Section.Item = ({ dt, title, t, p, dp }) => {
   return (
     <Item dt={getDtColor(dt)}>
-      <ItemTitle>Test</ItemTitle>
+      <ItemTitle>{title}</ItemTitle>
       <ItemDetails>
         <ItemDetailsLine>
-          <ItemDetailsTitle>خرید:</ItemDetailsTitle>
-          <ItemDetailsValue>25000</ItemDetailsValue>
+          <ItemDetailsTitle>ارزش:</ItemDetailsTitle>
+          <ItemDetailsValue>{p}</ItemDetailsValue>
         </ItemDetailsLine>
         <ItemDetailsLine>
-          <ItemDetailsTitle>فروش:</ItemDetailsTitle>
-          <ItemDetailsValue>25000</ItemDetailsValue>
+          <ItemDetailsTitle>درصد:</ItemDetailsTitle>
+          <ItemDetailsValue>{dp}</ItemDetailsValue>
         </ItemDetailsLine>
-        <ItemDetailsUpdatedAt>22/10/21</ItemDetailsUpdatedAt>
+        <ItemDetailsUpdatedAt>{t}</ItemDetailsUpdatedAt>
       </ItemDetails>
     </Item>
   );
