@@ -1,8 +1,8 @@
-import { Footer as FooterElement } from "./FooterElements";
+import { Footer as FooterElement, Text } from "./FooterElements";
 function Footer() {
   return (
     <FooterElement>
-      <h4>Footer</h4>
+      <Text>Developed by Narjes Norouzi</Text>
     </FooterElement>
   );
 }
