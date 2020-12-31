@@ -1,5 +1,11 @@
+import { BottomBar } from "./Components";
+
 function App() {
-  return <div></div>;
+  return (
+    <>
+      <BottomBar />
+    </>
+  );
 }
 
 export default App;
