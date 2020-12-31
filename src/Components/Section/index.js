@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  Title,
   Container,
   Item as ItemElement,
   ItemTitle,
@@ -10,9 +11,9 @@ import {
   ItemDetailsUpdatedAt,
 } from "./SectionElements";
 
-function Item() {
+function Item({ dt }) {
   return (
-    <ItemElement>
+    <ItemElement dt={dt}>
       <ItemTitle>Test</ItemTitle>
       <ItemDetails>
         <ItemDetailsLine>
@@ -29,22 +30,23 @@ function Item() {
   );
 }
 
-function Section() {
+function Section({ title }) {
   return (
     <section>
+      {title && <Title>{title}:</Title>}
       <Container>
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
+        <Item dt="green" />
+        <Item dt="red" />
+        <Item dt="green" />
+        <Item dt="" />
+        <Item dt="red" />
+        <Item dt="" />
+        <Item dt="green" />
+        <Item dt="red" />
+        <Item dt="" />
+        <Item dt="" />
+        <Item dt="red" />
+        <Item dt="green" />
       </Container>
     </section>
   );

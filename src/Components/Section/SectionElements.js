@@ -1,7 +1,13 @@
 import styled from "styled-components/macro";
 
+export const Title = styled.h4`
+  margin: 0;
+  padding: 1rem;
+`;
+
 export const Container = styled.div`
   display: block;
+  padding: 0.5rem;
 `;
 
 export const Item = styled.div`
@@ -12,9 +18,12 @@ export const Item = styled.div`
   background-color: #4d4d4d;
   padding: 1rem;
   margin-bottom: 1rem;
+  border-radius: 0.5rem;
   &&:last-child {
     margin-bottom: 0;
   }
+  border-left: 0.2rem solid;
+  border-left-color: ${({ dt }) => (dt ? dt : "transparent")};
 `;
 
 export const ItemTitle = styled.span`
