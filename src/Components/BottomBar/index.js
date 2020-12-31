@@ -7,16 +7,16 @@ import {
   RotateLeftIcon,
 } from "./BottomBarElements";
 
-function BottomBar() {
+function BottomBar({ updatedAt, onReload }) {
   return (
     <Container>
       <Inner>
-        <Button>
+        <Button onClick={onReload}>
           <Icon>
             <RotateLeftIcon />
           </Icon>
         </Button>
-        <UpdatedAt>آخرین آپدیت: 21/1</UpdatedAt>
+        <UpdatedAt>آخرین آپدیت: {updatedAt}</UpdatedAt>
       </Inner>
     </Container>
   );

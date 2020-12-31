@@ -1,6 +1,12 @@
+import React, { useState, useEffect } from "react";
 import { BottomBar, Section, Footer } from "./Components";
 
 function App() {
+  const [updatedAt, setUpdatedAt] = useState(new Date());
+  function getData() {
+    console.log("onReload");
+    setUpdatedAt(new Date());
+  }
   return (
     <>
       <Section title="نرخ ارز ها">
@@ -21,7 +27,7 @@ function App() {
         <Section.Item dt="low" />
       </Section>
       <Footer />
-      <BottomBar />
+      <BottomBar updatedAt={updatedAt.toString()} onReload={getData} />
     </>
   );
 }
